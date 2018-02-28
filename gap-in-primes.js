@@ -1,27 +1,60 @@
+const isPrime = int => {
+	if (int % 2 === 0) {
+		return false
+	}
+	for (let index = 3; index <= Math.ceil(int / 2); index += 2) {
+		if (int % index === 0) {
+			return false
+		}
+	}
+	return true
+}
+
+const checkForNoPrimes = (start, stop) => {
+	for (let index = start; index < stop; index++) {
+		if (isPrime(index)) {
+			return false
+		}
+	}
+	return true
+}
+
+
+
 const gap = (gap, m, n) => {
-	const isPrime = int => {
-		if (int % 2 === 0) { return false }
-		for (let index = 3; index < int; index += 2) {
-			if (int % index === 0) {
-				return false
-			}
+	const primes = []
+	const oddStart = m % 2 === 0 ? m + 1 : m
+	for (let index = oddStart; index <= n; index += 2) {
+		if (isPrime(index)) {
+			primes.push(index)
 		}
-		return true
 	}
-
-	const checkForNoPrimes = (start, stop) => {
-		const oddStart = start % 2 === 0 ? start + 1 : start
-		for (let index = oddStart; index < stop; index += 2) {
-			if (isPrime(index)) {
-				return false
-			}
+	for (let index = 0; index < primes.length; index++) {
+		if (primes[index + 1] - primes[index] === gap) {
+			return [primes[index], primes[index + 1]]
 		}
-		return true
 	}
+	return null
+}
 
-	for (let index = m; index <= n; index++) {
-		if (isPrime(index) && isPrime(index + gap) && checkForNoPrimes(index + 1, index + gap)) {
-			return [index, index + gap]
+
+
+
+
+
+
+
+
+
+
+
+
+const gap = (gap, m, n) => {
+	for (let i = m; i <= n; i++) {
+		if (isPrime(i) && isPrime(i + gap)) {
+			if (checkForNoPrimes(i + 1, i + gap)) {
+				return [i, i + gap]
+			}
 		}
 	}
 	return null
