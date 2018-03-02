@@ -10,3 +10,14 @@ const spinningRings = (innerMax, outerMax) => {
 		}
 	}
 }
+
+
+const spinningRings = (m, n) => {
+  let [a, b, result] = [0, 0, 0];
+  do {
+    result++;
+    a = (a + m) % (m + 1);
+    b = (b + 1) % (n + 1);
+  } while (a !== b);
+  return result;
+}
