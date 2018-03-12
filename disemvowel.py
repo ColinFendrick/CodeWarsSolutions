@@ -1,3 +1,3 @@
 import re
 def disemvowel(str):
-  return re.sub(r"[AEIOUaeiou]",'', str)
+  return re.sub(r"[aeiuo]",'', str, flags=re.IGNORECASE)
