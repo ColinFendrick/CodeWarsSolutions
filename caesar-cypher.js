@@ -16,7 +16,7 @@ const movingShift = (str, shift) => {
 	}
 	const rangeEnd = Math.ceil(output.length/5)
 	const answer = output.match(new RegExp('.{1,' + rangeEnd + '}', 'g'))
-	return answer.length === 5 ? answer : answer.push(' ')
+	return answer.length === 5 ? answer : answer.concat('')
 }
 
 const demovingShift = (input, shift) => {
@@ -35,7 +35,6 @@ const demovingShift = (input, shift) => {
 		}
 		output += current
 		shift++
-
 	}
 	return output
 }
