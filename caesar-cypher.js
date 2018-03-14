@@ -14,5 +14,6 @@ const movingShift = (str, shift) => {
 		output += letter
 		shift++
 	}
-	return output
+	const rangeEnd = Math.ceil(output.length/5)
+	return output.match(new RegExp('.{1,' + rangeEnd + '}', 'g'))
 }
