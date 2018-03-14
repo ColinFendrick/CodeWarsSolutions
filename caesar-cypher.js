@@ -24,16 +24,17 @@ const demovingShift = (input, shift) => {
 	let str = input.join('')
 	for (let i =0; i < str.length; i++) {
 		let current = str[i]
-		if (current.match(/[a-x]/i)) {
+		if (current.match(/[a-z]/i)) {
 			const code = str.charCodeAt(i)
-			if ((code >= 65) && (code <= 90)) {
-				current = String.fromCharCode(((code - 65 - shift + (26 * str.length)) % 26) + 65)
+			if ((code >= 65 - shift) && (code <= 90)) {
+				current = String.fromCharCode(((code - 65 - shift + (26 * input.length)) % 26) + 65)
 			}
 			else if ((code >= 97) && (code <= 122)) {
-				current = String.fromCharCode(((code - 97 - shift + (26 * str.length)) % 26) + 97)
-			}
+				current = String.fromCharCode(((code - 97 - shift + (26 * input.length)) % 26) + 97)
+			}	
 		}
 		output += current
+		shift++
 
 	}
 	return output
