@@ -19,3 +19,9 @@ def isPP(n):
   else:
     return list(y[0])
 
+
+def isPP(n):
+  for i in range(1,300):
+    for k in range(2,30):
+      if n == i**k:
+        return [i,k]
