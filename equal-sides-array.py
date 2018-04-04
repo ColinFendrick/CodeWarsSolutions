@@ -1,6 +1,5 @@
 def find_even_index(arr):
-  left = 0
-  right = sum(arr)
+  left, right = 0, sum(arr)
   for i, value in enumerate(arr):
     right -= value 
     if left == right:
