@@ -1,5 +1,5 @@
 const nextBigger = (n) => {
-	d = ('' + n).split('')
+	const d = ('' + n).split('')
 	let pivot
 	let numArray
 	let newArray

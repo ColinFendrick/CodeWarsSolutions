@@ -1,4 +1,4 @@
-const spinningRings = (innerMax, outerMax) => {
+let spinningRings = (innerMax, outerMax) => {
 	const max = Math.max(innerMax, outerMax) * 2
 	let inner = 0
 	let outer = 0
@@ -12,12 +12,12 @@ const spinningRings = (innerMax, outerMax) => {
 }
 
 
-const spinningRings = (m, n) => {
-  let [a, b, result] = [0, 0, 0];
-  do {
-    result++;
-    a = (a + m) % (m + 1);
-    b = (b + 1) % (n + 1);
-  } while (a !== b);
-  return result;
+spinningRings = (m, n) => {
+	let [a, b, result] = [0, 0, 0]
+	do {
+		result++
+		a = (a + m) % (m + 1)
+		b = (b + 1) % (n + 1)
+	} while (a !== b)
+	return result
 }

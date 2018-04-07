@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const isPolydivisible = (n, b) => {
 	let n1 = CHARS.indexOf(n[0])
 	for (let i = 1; i < n.length; i++) {
