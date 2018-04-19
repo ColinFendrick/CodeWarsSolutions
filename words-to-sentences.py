@@ -1,5 +1,5 @@
 def format_words(words):
-		if not words or len(words) == 0:
+		if not words or "".join(words) == "":
 				return ''
 		words = list(filter(lambda word: len(word) > 0, words))
 		if len(words) == 1:
