@@ -1,4 +1,4 @@
-public class JadenCase {
+public class JadenCaseStrings {
     public String toJadenCase(String phrase) {
         if (phrase == null || phrase.equals("")) return null;
         StringBuilder jadenCase = new StringBuilder();

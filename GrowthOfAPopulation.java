@@ -1,4 +1,4 @@
-public class Arge {
+public class GrowthOfAPopulation {
     public static int nbYear(int p0, double percent, int aug, int p) {
         int years = 0;
         int inhabitants = p0;
