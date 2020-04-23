@@ -6,3 +6,13 @@ const iqTest = numbers => {
 
 	return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1)
 }
+
+const iqTest = numbers => {
+	numbers = numbers.split ` `.map((x) => +x % 2)
+
+	return (
+		(numbers.reduce((x, y) => x + y) === 1 ?
+			numbers.indexOf(1) :
+			numbers.indexOf(0)) + 1
+	)
+}
