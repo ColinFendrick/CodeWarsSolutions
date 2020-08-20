@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-// Is_valid_ip
-func Is_valid_ip(ip string) bool {
+// IsValidIP ...
+func IsValidIP(ip string) bool {
 	nums := strings.Split(ip, ".")
 	if len(nums) != 4 {
 		return false
