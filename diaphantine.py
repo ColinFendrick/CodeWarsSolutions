@@ -1,6 +1,5 @@
 import unittest
 import math
-import numbers
 
 def sol_equa(n):
     result = []
