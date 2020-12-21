@@ -13,18 +13,18 @@ const solution = (roman) => {
 		V: 5,
 		IV: 4,
 		I: 1
-	}
-	let number = 0
+	};
+	let number = 0;
 	while (roman.length) {
 		for (let entry in key) {
 			if (roman.substring(0, 2) === entry) {
-				number += key[entry]
-				roman = roman.substr(2)
+				number += key[entry];
+				roman = roman.substr(2);
 			} else if (roman.substring(0, 1) === entry) {
-				number += key[entry]
-				roman = roman.substr(1)
+				number += key[entry];
+				roman = roman.substr(1);
 			}
 		}
 	}
-	return number
-}
+	return number;
+};

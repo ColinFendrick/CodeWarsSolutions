@@ -52,7 +52,7 @@ const numberToEnglish = (x) => {
     string = `${getHundreds(+n[0])}${getDozens(+n.slice(-2))}`
   } else {
     const z = x < 9999 ? 1 : 2
-    string = `${getThousands(+n.slice(0, z))}${getHundreds(+n.slice(-3, -2),)}${getDozens(+n.slice(-2))}`
+    string = `${getThousands(+n.slice(0, z))}${getHundreds(+n.slice(-3, -2))}${getDozens(+n.slice(-2))}`
   }
 
   return string.trim().replace(/\szero/g, '')

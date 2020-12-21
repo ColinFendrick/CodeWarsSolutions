@@ -5,17 +5,17 @@ function orderWeight(strng) {
 			return {
 				val: v,
 				key: v.split('').reduce(function (prev, curr) {
-					return parseInt(prev) + parseInt(curr)
+					return parseInt(prev) + parseInt(curr);
 				}, 0)
-			}
+			};
 		})
 		.sort(function (a, b) {
 			return a.key == b.key
 				? a.val.localeCompare(b.val)
-				: (a.key - b.key)
+				: (a.key - b.key);
 		})
 		.map(function (v) {
-			return v.val
+			return v.val;
 		})
-		.join(' ')
+		.join(' ');
 }

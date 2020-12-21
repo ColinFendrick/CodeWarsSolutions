@@ -2,15 +2,15 @@ const formatDuration = num => {
 	let seconds = num; let minutes = 0; let hours = 0; let days = 0; let years = 0; 
 
 	if (seconds === 0) {
-		return "now";
+		return 'now';
 	}
 	
 	else if (seconds === 1) {
-		return "1 second";
+		return '1 second';
 	}
 	
 	else if (seconds < 60) {
-		return seconds + " seconds"; 
+		return seconds + ' seconds'; 
 	}
 	
 	if (seconds >= 60) {
@@ -34,26 +34,26 @@ const formatDuration = num => {
 	}
 	
 	const sentenceArr = [];   
-	const unitNames = ["years", "days", "hours", "minutes", "seconds"]; 
+	const unitNames = ['years', 'days', 'hours', 'minutes', 'seconds']; 
 	const unitNums = [years, days, hours, minutes, seconds]; 
 	
 	for (const i in unitNums) {
 		if (unitNums[i] !== 0) {
 			if (unitNums[i] === 1) { 
-				sentenceArr.push(unitNums[i] + " " + unitNames[i].slice(0, -1) + ", ");
+				sentenceArr.push(unitNums[i] + ' ' + unitNames[i].slice(0, -1) + ', ');
 			} else {
-				sentenceArr.push(unitNums[i] + " " + unitNames[i] + ", "); 
+				sentenceArr.push(unitNums[i] + ' ' + unitNames[i] + ', '); 
 			}
 		}
 	}
 
-  if (sentenceArr.length === 1) {
+	if (sentenceArr.length === 1) {
 		return sentenceArr[0].slice(0, -2); 
 	}
 
-  const last = " and " + sentenceArr[sentenceArr.length - 1].slice(0, -2); 
-  const second = sentenceArr[sentenceArr.length - 2].slice(0, -2); 
-  sentenceArr.splice(sentenceArr.length - 2, 2, second, last); 
+	const last = ' and ' + sentenceArr[sentenceArr.length - 1].slice(0, -2); 
+	const second = sentenceArr[sentenceArr.length - 2].slice(0, -2); 
+	sentenceArr.splice(sentenceArr.length - 2, 2, second, last); 
 	
-  return sentenceArr.join(""); 
+	return sentenceArr.join(''); 
 };

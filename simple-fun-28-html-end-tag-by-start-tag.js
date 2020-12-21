@@ -1,1 +1,1 @@
-const htmlEndTagByStartTag = tag => `</${tag.match(/<([a-z]+).*>/)[1]}>`
+const htmlEndTagByStartTag = tag => `</${tag.match(/<([a-z]+).*>/)[1]}>`;

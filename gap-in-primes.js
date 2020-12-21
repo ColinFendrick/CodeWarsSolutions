@@ -1,34 +1,34 @@
 const isPrime = int => {
 	if (int % 2 === 0) {
-		return false
+		return false;
 	}
 	for (let index = 3; index <= Math.sqrt(int); index += 2) {
 		if (int % index === 0) {
-			return false
+			return false;
 		}
 	}
-	return true
-}
+	return true;
+};
 
 const checkForNoPrimes = (start, stop) => {
 	for (let index = start; index < stop; index++) {
 		if (isPrime(index)) {
-			return false
+			return false;
 		}
 	}
-	return true
-}
+	return true;
+};
 
 const gap = (gap, m, n) => {
 	for (let i = m; i <= n; i++) {
 		if (isPrime(i) && isPrime(i + gap)) {
 			if (checkForNoPrimes(i + 1, i + gap)) {
-				return [i, i + gap]
+				return [i, i + gap];
 			}
 		}
 	}
-	return null
-}
+	return null;
+};
 
 
 // const gap = (gap, m, n) => {

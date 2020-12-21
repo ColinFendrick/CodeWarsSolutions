@@ -1,56 +1,56 @@
 const encrypt = (text, n) => {
-  if (!text || n <= 0 || text.length <= 0) {
-    return text;
-  }
+	if (!text || n <= 0 || text.length <= 0) {
+		return text;
+	}
 
-  const helper = (str) => {
-    let output = "";
-    let temp = "";
+	const helper = (str) => {
+		let output = '';
+		let temp = '';
 
-    for (let i = 0; i < str.length; i++) {
-      if (i % 2) {
-        output += text[i];
-      } else {
-        temp += text[i];
-      };
-    };
+		for (let i = 0; i < str.length; i++) {
+			if (i % 2) {
+				output += text[i];
+			} else {
+				temp += text[i];
+			}
+		}
 
-    return output + temp;
-  };
+		return output + temp;
+	};
 
-  for (let i = 0; i < n; i++) {
-    text = helper(text);
-  }
+	for (let i = 0; i < n; i++) {
+		text = helper(text);
+	}
 
-  return text;
+	return text;
 };
 
 const decrypt = (encryptedText, n) => {
-  if (!encryptedText || n <= 0 || encryptedText.length <= 0) {
-    return encryptedText;
-  }
+	if (!encryptedText || n <= 0 || encryptedText.length <= 0) {
+		return encryptedText;
+	}
 
-  const helper = function (str) {
-    let odds = str.slice(0, (str.length / 2));
-    let evens = str.slice((str.length / 2));
-    let output = "";
+	const helper = function (str) {
+		let odds = str.slice(0, (str.length / 2));
+		let evens = str.slice((str.length / 2));
+		let output = '';
 
-    for (let i = 0; i < str.length; i++) {
-      if (i % 2) {
-        output += odds[0];
-        odds = odds.slice(1);
-      } else {
-        output += evens[0];
-        evens = evens.slice(1);
-      };
-    };
+		for (let i = 0; i < str.length; i++) {
+			if (i % 2) {
+				output += odds[0];
+				odds = odds.slice(1);
+			} else {
+				output += evens[0];
+				evens = evens.slice(1);
+			}
+		}
 
-    return output;
-  };
+		return output;
+	};
 
-  for (let i = 0; i < n; i++) {
-    encryptedText = helper(encryptedText);
-  }
+	for (let i = 0; i < n; i++) {
+		encryptedText = helper(encryptedText);
+	}
 
-  return encryptedText;
+	return encryptedText;
 };

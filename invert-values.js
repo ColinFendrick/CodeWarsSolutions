@@ -1,12 +1,12 @@
 function invert(array) {
-	let inversion = []
+	let inversion = [];
 	for (let i = 0; i < array.length; i++) {
 		if (array[i] === 0) {
-			inversion.push(array[i])
+			inversion.push(array[i]);
 		}
 		else {
-			inversion.push(array[i] * -1)
+			inversion.push(array[i] * -1);
 		}
 	}
-	return inversion
+	return inversion;
 }

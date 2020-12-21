@@ -1,19 +1,19 @@
 const findEvenIndex = arr => {
-  let sum = 0, leftSum = 0;
+	let sum = 0, leftSum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
+	for (let i = 0; i < arr.length; i++) {
+		sum += arr[i];
+	}
 
-  for (let i = 0; i < arr.length; i++) {
-    sum -= arr[i];
+	for (let i = 0; i < arr.length; i++) {
+		sum -= arr[i];
 
-    if (leftSum === sum) {
-      return i;
-    }
+		if (leftSum === sum) {
+			return i;
+		}
 
-    leftSum += arr[i];
-  }
+		leftSum += arr[i];
+	}
 
-  return -1;
-}
+	return -1;
+};

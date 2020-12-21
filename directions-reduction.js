@@ -4,7 +4,7 @@ const dirReduc = arr => {
       ((arr[i] === 'SOUTH') && (arr[i + 1] === 'NORTH')) ||
       ((arr[i] === 'EAST') && (arr[i + 1] === 'WEST')) ||
       ((arr[i] === 'WEST') && (arr[i + 1] === 'EAST'))) {
-			arr.splice(i, 2)
+			arr.splice(i, 2);
 		}
 	}
 	for (let i = 0; i < arr.length; i++) {
@@ -12,7 +12,7 @@ const dirReduc = arr => {
       ((arr[i] === 'SOUTH') && (arr[i + 1] === 'NORTH')) ||
       ((arr[i] === 'EAST') && (arr[i + 1] === 'WEST')) ||
       ((arr[i] === 'WEST') && (arr[i + 1] === 'EAST'))) {
-			arr.splice(i, 2)
+			arr.splice(i, 2);
 		}
 	}
 	for (let i = 0; i < arr.length; i++) {
@@ -20,8 +20,8 @@ const dirReduc = arr => {
       ((arr[i] === 'SOUTH') && (arr[i + 1] === 'NORTH')) ||
       ((arr[i] === 'EAST') && (arr[i + 1] === 'WEST')) ||
       ((arr[i] === 'WEST') && (arr[i + 1] === 'EAST'))) {
-			arr.splice(i, 2)
+			arr.splice(i, 2);
 		}
 	}
-	return arr
-}
+	return arr;
+};
