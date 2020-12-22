@@ -1,1 +1,1 @@
-sd=x=>+[...''+x].map(y=>y*y).join``;
+sd = x=>+[...'' + x].map(y=>y * y).join``;

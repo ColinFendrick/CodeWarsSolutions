@@ -1,4 +1,4 @@
-const solution = (roman) => {
+const solution = roman => {
 	const key = {
 		M: 1000,
 		CM: 900,
@@ -15,8 +15,8 @@ const solution = (roman) => {
 		I: 1
 	};
 	let number = 0;
-	while (roman.length) {
-		for (let entry in key) {
+	while (roman.length)
+		for (let entry in key)
 			if (roman.substring(0, 2) === entry) {
 				number += key[entry];
 				roman = roman.substr(2);
@@ -24,7 +24,7 @@ const solution = (roman) => {
 				number += key[entry];
 				roman = roman.substr(1);
 			}
-		}
-	}
+
+
 	return number;
 };

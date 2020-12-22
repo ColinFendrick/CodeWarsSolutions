@@ -1,5 +1,5 @@
 const pigIt = str =>
-	str.split(' ').map((word) => word.substr(1) + word.substr(0, 1) + 'ay').join(' ');
+	str.split(' ').map(word => word.substr(1) + word.substr(0, 1) + 'ay').join(' ');
 
 // //Refactor
 // const pigIt = str => {

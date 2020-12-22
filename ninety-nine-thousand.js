@@ -1,9 +1,9 @@
-const numberToEnglish = (x) => {
+const numberToEnglish = x => {
 	let n = x.toString();
 
-	if (x < 0 || x > 99999 || n.includes('.')) {
+	if (x < 0 || x > 99999 || n.includes('.'))
 		return '';
-	}
+
 
 	const value = {
 		'0': 'zero',
@@ -33,24 +33,24 @@ const numberToEnglish = (x) => {
 		'60': 'sixty',
 		'70': 'seventy',
 		'80': 'eighty',
-		'90': 'ninety',
+		'90': 'ninety'
 	};
 
-	const getDozens = (n) =>
+	const getDozens = n =>
 		n <= 20 ?
 			value[n] :
 			`${value[n.toString()[0] + '0']} ${value[n.toString()[1]]}`;
-	const getHundreds = (n) => (n > 0 ? `${value[n.toString()]} hundred ` : '');
-	const getThousands = (n) => getDozens(n) + ' thousand ';
+	const getHundreds = n => (n > 0 ? `${value[n.toString()]} hundred ` : '');
+	const getThousands = n => getDozens(n) + ' thousand ';
 	let string;
 
-	if (x <= 99) {
+	if (x <= 99)
 		string = getDozens(n).replace(/\szero/g, '');
-	} else if (x === 100) {
+	 else if (x === 100)
 		string = getHundreds(+n[0]);
-	} else if (x > 100 && x < 999) {
+	 else if (x > 100 && x < 999)
 		string = `${getHundreds(+n[0])}${getDozens(+n.slice(-2))}`;
-	} else {
+	 else {
 		const z = x < 9999 ? 1 : 2;
 		string = `${getThousands(+n.slice(0, z))}${getHundreds(+n.slice(-3, -2))}${getDozens(+n.slice(-2))}`;
 	}

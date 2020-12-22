@@ -13,14 +13,14 @@ function fizzBuzzCuckooClock(time) {
 			return 'Cuckoo '.repeat(hour % 12).trim();
 		}
 	default:
-		if (min % 3 === 0 && min % 5 === 0) {
+		if (min % 3 === 0 && min % 5 === 0)
 			return 'Fizz Buzz';
-		} else if (min % 3 === 0) {
+		 else if (min % 3 === 0)
 			return 'Fizz';
-		} else if (min % 5 === 0) {
+		 else if (min % 5 === 0)
 			return 'Buzz';
-		} else {
+		 else
 			return 'tick';
-		}
+
 	}
 }

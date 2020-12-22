@@ -1,16 +1,15 @@
 function sign(number) {
-	if ((typeof number === 'object') && ((number.length !== 1) || (number.toString().includes(',')))) {
+	if ((typeof number === 'object') && ((number.length !== 1) || (number.toString().includes(','))))
 		return NaN;
-	} else {
+	else {
 		let myNumber = parseInt(number);
-		if ((myNumber > 0) || (number == Infinity)) {
+		if ((myNumber > 0) || (number === Infinity))
 			return 1;
-		} else if ((myNumber < 0) || (number == -Infinity)) {
+		else if ((myNumber < 0) || (number === -Infinity))
 			return -1;
-		} else if (myNumber === 0) {
+		else if (myNumber === 0)
 			return 0;
-		} else {
+		else
 			return NaN;
-		}
 	}
 }

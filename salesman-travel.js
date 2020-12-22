@@ -5,19 +5,19 @@ const travel = (r, zipcode) => {
 			return {
 				house: addr[1],
 				street: addr[2],
-				zip: addr[3],
+				zip: addr[3]
 			};
 		});
 
 	let streets = [];
 	let houses = [];
-  
+
 	list.forEach(r => {
 		if (r.zip === zipcode) {
 			streets.push(r.street);
 			houses.push(r.house);
 		}
 	});
-  
+
 	return `${zipcode}:${streets.join(',')}/${houses.join(',')}`;
 };

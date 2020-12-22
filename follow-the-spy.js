@@ -1,4 +1,4 @@
-const findRoutes = (routes) => {
+const findRoutes = routes => {
 	const trace = [];
 
 	routes

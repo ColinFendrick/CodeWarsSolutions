@@ -1,1 +1,1 @@
-weirdReverse=a=>a.sort(_=>1);
+weirdReverse = a=>a.sort(_=>1);

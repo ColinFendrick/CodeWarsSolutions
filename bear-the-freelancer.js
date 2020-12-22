@@ -7,9 +7,7 @@ const RATES = {
 
 const DEFAULT_RATE = 125;
 
-const bearDollars = arr => {
-	return arr.map((m) => {
-		let [jobs, relation] = m;
-		return jobs * (RATES[relation.toLowerCase()] || DEFAULT_RATE);
-	}).reduce((t, n) => t + n, 0);
-};
+const bearDollars = arr => arr.map(m => {
+	let [jobs, relation] = m;
+	return jobs * (RATES[relation.toLowerCase()] || DEFAULT_RATE);
+}).reduce((t, n) => t + n, 0);

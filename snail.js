@@ -1,21 +1,21 @@
-let snail = (array) => {
+let snail = array => {
 	let result;
 	while (array.length) {
 		result = (result ? result.concat(array.shift()) : array.shift());
-		for (let i = 0; i < array.length; i++) {
+		for (let i = 0; i < array.length; i++)
 			result.push(array[i].pop());
-		}
+
 		result = result.concat((array.pop() || []).reverse());
-		for (let i = array.length - 1; i >= 0; i--) {
+		for (let i = array.length - 1; i >= 0; i--)
 			result.push(array[i].shift());
-		}
+
 	}
 	return result;
 };
 
 // Refactored
 
-snail = (array) => {
+snail = array => {
 	var result;
 	while (array.length) {
 		// Steal the first row.

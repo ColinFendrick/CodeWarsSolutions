@@ -1,4 +1,4 @@
-const Calculator = function () {
+const Calculator = function() {
 	this.evaluate = string => {
 		let arr = string.split(' ');
 		while (arr.length > 1) {

@@ -13,5 +13,4 @@ function lateRide(n) {
 	return answer;
 
 
-
 }
