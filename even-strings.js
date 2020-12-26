@@ -1,4 +1,2 @@
-const evenChars = str => {
-	const res = str.split('').filter((_, i) => i % 2 === 0);
-	return res.length ? res : ['invalid string'];
-};
+const evenChars = string =>
+	(string.length < 2 || string.length > 100) ? 'invalid string' : [...string].filter((_, i) => i % 2);
