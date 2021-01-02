@@ -4,10 +4,9 @@ const calc = expr => {
 	tokens.forEach(token => {
 		if (token.match(/\d+.?\d*?/))
 			numberStack.push(parseFloat(token));
-		 else {
+		else {
 			const b = numberStack.pop();
 			const a = numberStack.pop();
-			console.log(token);
 			switch (token) {
 			case '+':
 				numberStack.push(a + b);
