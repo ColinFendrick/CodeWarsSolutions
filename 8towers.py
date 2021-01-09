@@ -1,5 +1,5 @@
-def towerCombination(x):
+def tower_combination(x):
   if x == 0 or x ==1:
     return 1
   else:
-    return (x*towerCombination(x-1))
+    return (x*tower_combination(x-1))
