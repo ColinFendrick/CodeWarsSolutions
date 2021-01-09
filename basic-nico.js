@@ -1,28 +1,20 @@
 const nico = (key, message) => {
-	const part = Math.ceil(message.length / key.length);
+	let k = key.length;
+	let m = message.length;
 
-	const d = {};
+	if (m % k)
+		message += ' '.repeat(k - m % k);
 
-	const mask = key.split('')
-		.sort()
-		.map((e, i) => [e, i + 1])
-		.sort((a, b) => key.indexOf(a[0]) - key.indexOf(b[0]))
-		.map(e => e[1]);
+	let cipher = [...key]
+		.map((char, i) => [char, i])
+		.sort((a, b) => a[0].localeCompare(b[0]))
+		.map((a, i) => a.concat(i))
+		.sort((a, b) => a[1] - b[1])
+		.map(a => a[2]);
 
-
-	for (let i = 0; i < key.length; i++) {
-		let temp = '';
-		for (let j = i; j < message.length; j += key.length)
-			temp += message[j];
-
-		temp.length < part ? temp += ' '.repeat(part - temp.length) : undefined;
-		d[mask.shift()] = temp.split('');
-	}
-
-	let result = '';
-
-	while (Object.keys(d).every(e => d[e].length !== 0))
-		Object.keys(d).forEach(e => result += d[e].shift());
-
-	return result;
+	return [...message]
+	  .map((char, i) => [char, Math.floor(i / k) * k + cipher[i % k]])
+		.sort((a, b) => a[1] - b[1])
+		.map(a => a[0])
+		.join('');
 };
