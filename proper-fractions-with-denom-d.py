@@ -1,32 +1,43 @@
-def proper_fractions(n):
-  if n == 1:
-    return 0
+# def proper_fractions(n):
+#   if n == 1:
+#     return 0
 
-  temp = 1
-  m = n
-  l = int(n ** 0.5)+1
+#   temp = 1
+#   m = n
+#   l = int(n ** 0.5)+1
 
-  for i in range(1, l):
-    if is_prime(i):
-      if m % i ==0:
-        temp *= i-1
-        m /= i
-      while m % i ==0:
-        temp *= i
-        m /= i
+#   for i in range(1, l):
+#     if is_prime(i):
+#       if m % i ==0:
+#         temp *= i-1
+#         m /= i
+#       while m % i ==0:
+#         temp *= i
+#         m /= i
 
-  if m > 1:
-    temp *= m-1
-  return temp
+#   if m > 1:
+#     temp *= m-1
+#   return temp
   
-def is_prime(n):
-  if n == 0 or n == 1:
-    return False
+# def is_prime(n):
+#   if n == 0 or n == 1:
+#     return False
 
-  i = 2
+#   i = 2
 
-  while (i <= n ** 0.5 ):
-    if n % i == 0:
-      return False
-    i += 1
-  return True
+#   while (i <= n ** 0.5 ):
+#     if n % i == 0:
+#       return False
+#     i += 1
+#   return True
+
+def proper_fractions(n):
+  phi = n > 1 and n
+  for p in range(2, int(n ** .5) + 1):
+    if not n % p:
+      phi -= phi // p
+      while not n % p:
+        n //= p
+  if n > 1:
+    phi -= phi // n
+  return phi
