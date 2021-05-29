@@ -1,5 +1,4 @@
 class PaginationHelper:
-
   # The constructor takes in an array of items and a integer indicating
   # how many items fit within a single page
   def __init__(self, coll, items):
